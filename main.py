@@ -8,7 +8,7 @@ pygame.init()
 # set window parameters
 windowWidth = 800
 windowHeight = 400
-screen = pygame.display.set_mode((windowWidth, windowHeight))
+screen = pygame.display.set_mode((windowWidth, windowHeight))  # , pygame.FULLSCREEN for fullscreen
 
 # load and set the game's icon
 pygame.display.set_caption('Test Application')
@@ -21,7 +21,8 @@ text_surface = test_font.render('Test Application', True, 'White')
 text_rect = text_surface.get_rect(center=(windowWidth / 2, windowHeight / 2))
 
 # load and set the background
-background_surface = pygame.image.load('Graphics/Static-Background-2.png')
+background_surface = pygame.image.load('Graphics/Static-Background.png')
+background_surface = pygame.transform.scale(background_surface, (windowWidth,windowHeight))
 background_rect = background_surface.get_rect(center=(windowWidth / 2, windowHeight / 2))
 
 # load and set the font
